@@ -18,10 +18,6 @@ public class TaskManagementController {
 
     @GetMapping("/tasks")
     public String createTask(@RequestParam String message) {
-        return chatClient.prompt()
-                .tools(taskManagementTools)
-                .user(message)
-                .call()
-                .content();
+        return chatClient.prompt().tools(taskManagementTools).user(message).call().content();
     }
 }
